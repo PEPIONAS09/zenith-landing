@@ -549,6 +549,46 @@ footer{
   footer{flex-direction:column;text-align:center}
   .footer-links{flex-wrap:wrap;justify-content:center}
 }
+
+/* ── PRECIOS · 3 niveles ─────────────────────── */
+.pricing-grid{grid-template-columns:1fr 1fr 1fr}
+.pricing-card{padding:44px 32px}
+.pricing-card.featured{
+  background:var(--card2);
+  box-shadow:inset 0 2px 0 var(--lime);
+}
+.pricing-price{font-size:64px}
+.pricing-price sup{font-size:26px;margin-top:11px}
+.pricing-spots{
+  font-family:'DM Mono',monospace;font-size:9px;
+  color:var(--lime);letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:24px;display:flex;align-items:center;gap:8px;
+}
+.pricing-spots::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--lime);flex-shrink:0;
+}
+.pricing-spots.open{color:var(--gray)}
+.pricing-spots.open::before{background:var(--gray2)}
+.pricing-note{
+  font-size:13px;font-weight:300;color:var(--gray);
+  line-height:1.7;margin-bottom:28px;min-height:44px;
+}
+/* Aviso: el track se elige aparte del plan */
+.pricing-axis{
+  border:1px solid var(--border2);padding:20px 24px;
+  margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.pricing-axis-lbl{
+  font-family:'DM Mono',monospace;font-size:9px;color:var(--lime);
+  letter-spacing:0.16em;text-transform:uppercase;flex-shrink:0;
+}
+.pricing-axis-txt{font-size:13px;font-weight:300;color:var(--gray);line-height:1.7}
+.pricing-axis-txt strong{color:var(--white);font-weight:500}
+@media(max-width:860px){
+  .pricing-grid{grid-template-columns:1fr}
+  .pricing-note{min-height:0}
+}
 </style>
 </head>
 <body>
@@ -794,42 +834,90 @@ footer{
 <!-- PRICING -->
 <section id="precios" style="border-top:1px solid var(--border);padding:100px 5%">
   <div class="section-label reveal">Precios</div>
-  <h2 class="reveal">INVIERTE EN<br>TU RENDIMIENTO</h2>
-  <p class="section-sub reveal d1">Sin contratos. Sin letra chica. Cancela cuando quieras.</p>
+  <h2 class="reveal">ELIGE CUÁNTO<br>COACH QUIERES</h2>
+  <p class="section-sub reveal d1">Tu programa define <em style="color:var(--white);font-style:normal">qué</em> entrenas. Tu plan define cuánto acompañamiento llevas encima. Sin contratos — cancelas cuando quieras.</p>
+
   <div class="pricing-grid">
+
+    <!-- NIVEL 1 -->
     <div class="pricing-card reveal">
-      <div class="pricing-badge lime">1:1 Coaching</div>
-      <div class="pricing-name">Programación Personal</div>
-      <div class="pricing-price"><sup>$</sup>1,499</div>
+      <div class="pricing-badge dim">Nivel 1</div>
+      <div class="pricing-name">Programa</div>
+      <div class="pricing-price"><sup>$</sup>649</div>
       <div class="pricing-period">MXN · por mes</div>
+      <div class="pricing-spots open">Cupo abierto</div>
+      <p class="pricing-note">Para quien ya sabe entrenar y solo necesita una programación seria que seguir.</p>
       <div class="pricing-includes">Incluye</div>
       <ul class="pricing-list">
-        <li>Programación 100% personalizada para tus objetivos</li>
-        <li>2 check-ups quincenales en llamada con tu coach</li>
-        <li>Acceso completo a la app ZENITH</li>
-        <li>Chat directo con Jose Carlos</li>
-        <li>Videos demo en todos los movimientos</li>
-        <li>Ajustes de programación en tiempo real</li>
+        <li>Tu track completo — Compete, HYROX u Olympus</li>
+        <li>Acceso total a la app ZENITH</li>
+        <li>Pesos calculados con tus PRs</li>
+        <li>Leaderboard de la comunidad</li>
+        <li>Videos demo en cada movimiento</li>
+        <li>Registro de PRs e historial</li>
       </ul>
-      <a href="#contacto" class="pricing-cta">Aplicar ahora →</a>
+      <a href="#contacto" class="pricing-cta ghost">Empezar →</a>
       <div class="pricing-accent"></div>
     </div>
-    <div class="pricing-card reveal d1">
-      <div class="pricing-badge dim">Grupal</div>
-      <div class="pricing-name">Programación Grupal</div>
-      <div class="pricing-price"><sup>$</sup>699</div>
+
+    <!-- NIVEL 2 · destacado -->
+    <div class="pricing-card featured reveal d1">
+      <div class="pricing-badge lime">Más elegido</div>
+      <div class="pricing-name">Programa + Coach</div>
+      <div class="pricing-price"><sup>$</sup>1,290</div>
       <div class="pricing-period">MXN · por mes</div>
-      <div class="pricing-includes">Incluye</div>
+      <div class="pricing-spots">25 lugares</div>
+      <p class="pricing-note">Para quien quiere que alguien revise lo que está haciendo y le corrija el rumbo.</p>
+      <div class="pricing-includes">Todo lo anterior, más</div>
       <ul class="pricing-list">
-        <li>Elige tu track: <strong style="color:var(--white)">Compete, HYROX u Olympus</strong></li>
-        <li>1 check-up mensual en llamada con tu coach</li>
-        <li>Acceso completo a la app ZENITH</li>
-        <li>Chat con tu coach</li>
-        <li>Videos demo en todos los movimientos</li>
-        <li>Pesos calculados automáticamente con tus PRs</li>
+        <li>Chat directo con tu coach</li>
+        <li>Revisión de tus scores cada semana</li>
+        <li>Ajustes a tu bloque según cómo respondas</li>
+        <li>Corrección de técnica por video</li>
+        <li>Prioridad en respuesta</li>
       </ul>
-      <a href="#contacto" class="pricing-cta ghost">Aplicar ahora →</a>
+      <a href="#contacto" class="pricing-cta">Aplicar →</a>
       <div class="pricing-accent"></div>
+    </div>
+
+    <!-- NIVEL 3 -->
+    <div class="pricing-card reveal d2">
+      <div class="pricing-badge dim">Nivel 3</div>
+      <div class="pricing-name">1:1</div>
+      <div class="pricing-price"><sup>$</sup>2,990</div>
+      <div class="pricing-period">MXN · por mes</div>
+      <div class="pricing-spots">8 lugares</div>
+      <p class="pricing-note">Programación construida desde cero para ti. Para competidores con una fecha marcada en el calendario.</p>
+      <div class="pricing-includes">Todo lo anterior, más</div>
+      <ul class="pricing-list">
+        <li>Programación 100% individual</li>
+        <li>2 llamadas al mes con Jose Carlos</li>
+        <li>Periodización hacia tu competencia</li>
+        <li>Ajustes en tiempo real</li>
+        <li>Análisis de video detallado</li>
+      </ul>
+      <a href="#contacto" class="pricing-cta ghost">Agendar llamada →</a>
+      <div class="pricing-accent"></div>
+    </div>
+
+  </div>
+
+  <!-- El otro eje, dicho explícito -->
+  <div class="pricing-axis reveal d2">
+    <div class="pricing-axis-lbl">Tu track</div>
+    <div class="pricing-axis-txt">
+      Los niveles 1 y 2 corren sobre uno de los tres programas:
+      <strong>Compete</strong> para competidores, <strong>HYROX</strong> para carrera,
+      <strong>Olympus</strong> para fuerza y estética. Puedes cambiar de track cuando quieras, sin costo.
+    </div>
+  </div>
+
+  <!-- Gimnasios -->
+  <div class="pricing-axis reveal d3" style="border-color:var(--border)">
+    <div class="pricing-axis-lbl" style="color:var(--gray)">Gimnasios</div>
+    <div class="pricing-axis-txt">
+      ¿Tienes un box y quieres ZENITH para tus miembros? Trabajamos convenios por gimnasio
+      con precio según número de atletas. <a href="#contacto" style="color:var(--lime);text-decoration:none">Escríbenos →</a>
     </div>
   </div>
 </section>
@@ -841,7 +929,7 @@ footer{
   <p class="cta-sub reveal">Cupos limitados. Aplica hoy — te respondemos en menos de 24 horas.</p>
   <div class="cta-actions reveal d1">
     <a href="#contacto" class="btn-primary">Aplicar al programa</a>
-    <a href="https://zenithprogram.com" class="btn-outline">Entrar a la app</a>
+    <a href="https://app.zenithprogram.com" class="btn-outline">Entrar a la app</a>
   </div>
 </section>
 
@@ -861,7 +949,7 @@ footer{
       </div>
       <div class="contact-detail reveal">
         <div class="contact-lbl">App</div>
-        <div class="contact-val"><a href="https://zenithprogram.com">zenithprogram.com</a></div>
+        <div class="contact-val"><a href="https://app.zenithprogram.com">app.zenithprogram.com</a></div>
       </div>
       <div class="contact-detail reveal">
         <div class="contact-lbl">Instagram</div>
@@ -890,6 +978,16 @@ footer{
             <option>No sé aún — necesito orientación</option>
           </select>
         </div>
+        <div class="f-field" style="grid-column:1/-1">
+          <div class="f-label">Plan de interés</div>
+          <select class="f-select">
+            <option value="">Selecciona</option>
+            <option>Programa — $649/mes</option>
+            <option>Programa + Coach — $1,290/mes</option>
+            <option>1:1 — $2,990/mes</option>
+            <option>Convenio para gimnasio</option>
+          </select>
+        </div>
         <div class="f-field">
           <div class="f-label">¿Por qué ZENITH? ¿Cuáles son tus objetivos?</div>
           <textarea class="f-textarea" placeholder="Cuéntanos sobre tu experiencia, tus metas y qué te trajo aquí..."></textarea>
@@ -904,14 +1002,14 @@ footer{
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">ZENITH Performance Program</div>
-  <div class="footer-copy">© 2025 ZENITH. Todos los derechos reservados.</div>
+  <div class="footer-copy">© 2026 ZENITH. Todos los derechos reservados.</div>
   <div class="footer-links">
     <a href="#programas">Programas</a>
     <a href="#precios">Precios</a>
     <a href="#coach">Coach</a>
     <a href="#app">App</a>
     <a href="#contacto">Contacto</a>
-    <a href="https://zenithprogram.com">App →</a>
+    <a href="https://app.zenithprogram.com">App →</a>
   </div>
 </footer>
 
